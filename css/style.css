@@ -1,0 +1,328 @@
+@import url(reset.css);
+
+@import url(https://fonts.googleapis.com/css?family=Carlito:regular,italic,700,700italic);
+
+body {
+    font-size: 20px;
+    font-family: 'Carlito';
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding: 50px;
+    text-align: center;
+}
+
+.examples {
+    margin-bottom: 300px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    color: chocolate;
+    margin-bottom: 50px;
+    /* text-decoration: overline; */
+}
+
+.title::after,
+.title::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: chocolate;
+    margin: 5px auto;
+}
+
+.examples__subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(0, 139, 28);
+    margin-bottom: 30px;
+}
+
+/*- 2D Трансформації */
+.examples__box-2d {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.card-2d__ex {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(78, 13, 175, 0.584);
+    align-items: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.card-2d__ex--translate-pixel:hover {
+    transform: translate(20px, 20px);
+}
+
+.card-2d__ex--translate-percent:hover {
+    transform: translate(-30%, -10%);
+}
+
+.card-2d__ex--scale-min:hover {
+    transform: scale(0.4);
+}
+
+.card-2d__ex--scale-max:hover {
+    transform: scale(1.15);
+}
+
+.card-2d__ex--scale-mirror:hover {
+    transform: scale(-1, -1);
+}
+
+.card-2d__ex--rotate-positive:hover {
+    transform: rotate(90deg);
+}
+
+.card-2d__ex--rotate-negative:hover {
+    transform: rotate(-45deg);
+}
+
+.card-2d__ex--skew-positive:hover {
+    transform: skew(10deg, 20deg);
+}
+.card-2d__ex--skew-negative:hover {
+    transform: skew(-10deg, 0deg);
+}
+
+.card-2d__ex--skew-x:hover {
+    transform: skewX(20deg);
+}
+
+.card-2d__ex--skew-y:hover {
+    transform: skewY(15deg);
+}
+
+.card-2d__ex--multi:hover {
+    transform: scale(1.15) rotate(45deg) skewX(20deg) skewY(15deg);
+}
+
+.card-2d__ex--origin:hover {
+    transform-origin: 40px 20px;
+    transform: scale(1.3);
+}
+
+.card-2d__box--origin-top-left:hover .card-2d__ex--origin-top-left {
+    transform-origin: bottom left;
+    transform: rotate(360deg);
+}
+
+.card-2d__box--origin-top-right:hover .card-2d__ex--origin-top-right {
+    transform-origin: top right;
+    transform: rotate(-45deg);
+}
+
+/*- 3D Трансформації */
+.examples__box-3d {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.card-3d__ex {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(78, 13, 175, 0.584);
+    transition: all 0.6s ease-in-out;
+}
+
+.card-3d__box--translate,
+.card-3d__box--scale,
+.card-3d__box--rotate,
+.card-3d__box--hidden {
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+
+.card-3d__box--translate:hover .card-3d__ex--translate {
+    transform: translate3d(20px, 50px, 90px);
+}
+
+.card-3d__box--scale:hover .card-3d__ex--scale {
+    transform: scale3d(1.3, 1.2, 1.5);
+}
+
+.card-3d__box--rotate:hover .card-3d__ex--rotate {
+    transform: rotate3d(1, 0, 0, 75deg);
+}
+
+.card-3d__box--hidden:hover .card-3d__ex--hidden {
+    transform: rotate3d(1, 0, 1, 180deg);
+    backface-visibility: hidden;
+}
+
+/*- Car  */
+
+.car-container {
+    position: absolute;
+    width: 430px;
+    height: 300px;
+}
+
+.car-container:after {
+    content: '';
+    width: 426px;
+    height: 1px;
+    margin-top: 88px;
+    display: block;
+    position: absolute;
+    left: -3%;
+    z-index: -1;
+    bottom: 0;
+    box-shadow: 2px -15px 25px 2px #000000;
+}
+
+/*-   Wheels   */
+
+.wheel1,
+.wheel2 {
+    width: 120px;
+    height: 120px;
+    background-color: grey;
+    border-radius: 50%;
+    border: 20px solid black;
+    position: absolute;
+    bottom: 0;
+    animation: wheelsRotation 1s infinite linear;
+}
+
+.wheel1 {
+    left: 5%;
+}
+
+.wheel1-top,
+.wheel2-top {
+    bottom: 48px;
+    position: absolute;
+    width: 106px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0px 13px 3px 0px rgba(240, 240, 240, 0.53);
+    transform: rotateX(180deg);
+}
+
+.wheel1-top {
+    left: 7%;
+}
+
+.wheel2-top {
+    right: 7%;
+}
+
+.wheel2 {
+    right: 5%;
+}
+
+.wheel-dot1,
+.wheel-dot2 {
+    width: 10px;
+    height: 25px;
+    background-color: black;
+    position: absolute;
+}
+
+.wheel-dot3,
+.wheel-dot4 {
+    width: 25px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+}
+
+.wheel-dot1 {
+    top: 10%;
+    left: 45%;
+}
+
+.wheel-dot2 {
+    bottom: 10%;
+    left: 45%;
+}
+
+.wheel-dot3 {
+    top: 45%;
+    right: 10%;
+}
+
+.wheel-dot4 {
+    top: 45%;
+    left: 10%;
+}
+
+.door {
+    width: 110px;
+    height: 100px;
+    border: 3px solid #b57a84;
+    position: absolute;
+    left: 36%;
+    top: 16px;
+    border-radius: 10% 40% 10% 10%;
+}
+.door__knob {
+    width: 30px;
+    height: 14px;
+    background-color: #e8e6e6;
+    border-radius: 30%;
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    border: 1px solid lightcoral;
+}
+
+.car-top1 {
+    border-radius: 25% 40% 0 0;
+    background-color: #6a1621;
+    max-width: 100%;
+    width: 250px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 4%;
+}
+
+.window1,
+.window2 {
+    background-color: #e2f0f6;
+    border-radius: 5px;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    margin: 17px;
+    border: 9px solid #bf6d7b;
+}
+
+.window1 {
+    left: 0;
+    border-top-left-radius: 30%;
+}
+
+.window2 {
+    right: 0;
+    border-top-right-radius: 50%;
+}
+
+.car-top2 {
+    border-radius: 100px 200px 0 0;
+    background-color: #25659c;
+    border: 10px solid #72252f;
+    background-color: #9c2535;
+    max-width: 100%;
+    width: 430px;
+    height: 140px;
+    position: absolute;
+    bottom: 20%;
+}

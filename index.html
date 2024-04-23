@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Трансформації</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <!--+ examples transform -->
+            <h1 class="title">CSS Трансформації</h1>
+            <div class="examples">
+                <!--+ 2D Трансформації -->
+                <h2 class="examples__subtitle">2D Трансформації</h2>
+                <div class="examples__box-2d card-2d">
+                    <div class="card-2d__ex card-2d__ex--translate-pixel">translate(20px, 20px)</div>
+                    <div class="card-2d__ex card-2d__ex--translate-percent">translate(10%, -20%)</div>
+                    <div class="card-2d__ex card-2d__ex--scale-min">scale(0.4)</div>
+                    <div class="card-2d__ex card-2d__ex--scale-max">scale(1.5)</div>
+                    <div class="card-2d__ex card-2d__ex--scale-mirror">scale(-1, 1) mirror</div>
+                    <div class="card-2d__ex card-2d__ex--rotate-positive">rotate(90deg)</div>
+                    <div class="card-2d__ex card-2d__ex--rotate-negative">rotate(-45deg)</div>
+                    <div class="card-2d__ex card-2d__ex--skew-positive">skew(10deg, 20deg)</div>
+                    <div class="card-2d__ex card-2d__ex--skew-negative">skew(-10deg, 0deg)</div>
+                    <div class="card-2d__ex card-2d__ex--skew-x">skewX(20deg)</div>
+                    <div class="card-2d__ex card-2d__ex--skew-y"> skewY(15deg)</div>
+                    <div class="card-2d__ex card-2d__ex--multi">
+                        transform: scale(1.15) rotate(45deg) skewX(20deg) skewY(15deg);
+                    </div>
+                    <div class="card-2d__ex card-2d__ex--origin">origin: 40px 20px scale(1.3)</div>
+                    <div class="card-2d__box card-2d__box--origin-top-left">
+                        <div class="card-2d__ex card-2d__ex--origin-top-left">
+                            origin: bottom left rotate(360deg)
+                        </div>
+                    </div>
+                    <div class="card-2d__box card-2d__box--origin-top-right">
+                        <div class="card-2d__ex card-2d__ex--origin-top-right">
+                            origin: top right rotate(45deg)
+                        </div>
+                    </div>
+                </div>
+                <!--+ 3D Трансформації -->
+                <h2 class="examples__subtitle">3D Трансформації</h2>
+                <div class="examples__box-3d card-3d">
+                    <div class="card-3d__box card-3d__box--translate">
+                        <div class="card-3d__ex card-3d__ex--translate">
+                            transform: translate 3d (20px, 50px, 90px)
+                        </div>
+                    </div>
+                    <div class="card-3d__box card-3d__box--scale">
+                        <div class="card-3d__ex card-3d__ex--scale">
+                            transform: scale3d <br> (1.3, 1.2, 1.5);
+                        </div>
+                    </div>
+                    <div class="card-3d__box card-3d__box--rotate">
+                        <div class="card-3d__ex card-3d__ex--rotate">
+                            transform: rotate3d <br> (1, 0, 0, 75deg)
+                        </div>
+                    </div>
+                    <div class="card-3d__box card-3d__box--hidden">
+                        <div class="card-3d__ex card-3d__ex--hidden">
+                            transform: rotateY(-180deg) <br> backface-visibility: hidden
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--+ Car -->
+            <div class="car-container">
+                <div class="car-top1">
+                    <div class="window1"></div>
+                    <div class="window2"></div>
+                </div>
+                <div class="car-top2">
+                    <div class="door">
+                        <div class="door__knob"></div>
+                    </div>
+                </div>
+                <div class="car-bottom">
+                    <div class="wheel1-top"></div>
+                    <div class="wheel1">
+                        <div class="wheel-dot1"></div>
+                        <div class="wheel-dot2"></div>
+                        <div class="wheel-dot3"></div>
+                        <div class="wheel-dot4"></div>
+                    </div>
+                    <div class="wheel2-top"></div>
+                    <div class="wheel2">
+                        <div class="wheel-dot1"></div>
+                        <div class="wheel-dot2"></div>
+                        <div class="wheel-dot3"></div>
+                        <div class="wheel-dot4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
